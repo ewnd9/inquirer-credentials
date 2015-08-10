@@ -1,0 +1,26 @@
+{
+  "name": "inquirer-credentials",
+  "version": "1.0.0",
+  "description": "credentials prompt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "preferGlobal": "false",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ewnd9/inquirer-credentials.git"
+  },
+  "keywords": [
+    "credentials",
+    "inquirer"
+  ],
+  "author": "ewnd9 <ewndnine@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.9.34",
+    "dot-file-config": "^0.4.0",
+    "inquirer-bluebird": "^1.0.1",
+    "lodash": "^3.10.1"
+  }
+}
