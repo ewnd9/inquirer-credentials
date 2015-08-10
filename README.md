@@ -13,7 +13,8 @@ var inquirerCredentials = require('inquirer-credentials');
 
 var username = {
   name: 'username',
-  type: 'input'
+  type: 'input',
+  hint: 'large multiline hint'
 };
 
 var password = {
