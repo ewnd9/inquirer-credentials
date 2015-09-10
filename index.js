@@ -16,19 +16,17 @@ module.exports = function(appName, questions) {
   if (unknown.length === 0) {
     return Promise.resolve(config.data.credentials);
   } else {
-    var xs = _.map(unknown, function(question) {
-      return {
-        type: question.type,
-        message: question.name,
-        name: question.name,
-        hint: question.hint
-      }
-    });
-
-    return Promise.reduce(xs, function(result, question) {
+    return Promise.reduce(unknown, function(result, question) {
       if (question.hint) {
         console.log(question.hint);
       }
+
+      if (question.env && process.env[question.env]) {
+        config.data.credentials[question.name] = process.env[question.env];
+        return true;
+      }
+
+      question.message = question.name;
 
       return inquirer.prompt(question).then(function(answers) {
         _.each(answers, function(answer, name) {
@@ -40,6 +38,6 @@ module.exports = function(appName, questions) {
       });
     }, 0).then(function() {
       return config.data.credentials;
-    });
+    }).catch(console.log.bind(console));
   }
 };
