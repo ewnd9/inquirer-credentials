@@ -1,4 +1,5 @@
-var inquirerCredentials = require('inquirer-credentials');
+// var inquirerCredentials = require('inquirer-credentials');
+var inquirerCredentials = require('../');
 
 var username = {
   name: 'username',
@@ -14,5 +15,5 @@ var password = {
 };
 
 inquirerCredentials('.test', [username, password]).then(function(result) {
-  console.log(result);
+  console.log(result.data);
 });

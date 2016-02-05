@@ -1,10 +1,10 @@
 {
   "name": "inquirer-credentials",
   "version": "1.2.0",
-  "description": "credentials prompt",
+  "description": "Credentials prompt with fs persistence",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava --serial"
   },
   "preferGlobal": "false",
   "repository": {
@@ -18,9 +18,13 @@
   "author": "ewnd9 <ewndnine@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "bluebird": "^2.9.34",
-    "dot-file-config": "^0.4.0",
-    "inquirer-bluebird": "^1.0.1",
-    "lodash": "^3.10.1"
+    "bluebird": "^3.0.0",
+    "dot-file-config": "^0.6.1",
+    "inquirer-bluebird": "^1.0.1"
+  },
+  "devDependencies": {
+    "ava": "^0.11.0",
+    "inquirer-test": "^1.0.2",
+    "user-home": "^2.0.0"
   }
 }

@@ -1,4 +1,5 @@
-var inquirerCredentials = require('inquirer-credentials');
+// var inquirerCredentials = require('inquirer-credentials');
+var inquirerCredentials = require('../');
 
 var appId = '6495';
 
@@ -10,5 +11,5 @@ var pin = {
 };
 
 inquirerCredentials('.test', [pin]).then(function(result) {
-  console.log(result);
+  console.log(result.data);
 });

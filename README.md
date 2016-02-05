@@ -1,5 +1,7 @@
 # inquirer-credentials
 
+[![Build Status](https://travis-ci.org/ewnd9/inquirer-credentials.svg?branch=master)](https://travis-ci.org/ewnd9/inquirer-credentials)
+
 ## Install
 
 ```
@@ -8,28 +10,36 @@ $ npm install inquirer-credentials --save
 
 ## Usage
 
-```
-var inquirerCredentials = require('inquirer-credentials');
+```js
+const inquirerCredentials = require('inquirer-credentials');
 
-var username = {
+const username = {
   name: 'username',
   type: 'input',
-  hint: 'large multiline hint',
+  hint: 'please, tell your username',
   env: 'USERNAME' // uses process.env['USERNAME'] if exists and don't ask user
 };
 
-var password = {
+const password = {
   name: 'password',
   type: 'password',
   env: 'PASSWORD' // uses process.env['PASSWORD'] if exists and don't ask user
 };
 
-inquirerCredentials('.test', [username, password]).then(function(result) {
-  console.log(result);
-  // { username: 'string', password: 'string' }
-});
-
+inquirerCredentials('.test', [username, password])
+  .then(function(result) {
+    result.data //=> { username: 'string', password: 'string' }
+    result.save() // persists config to fs, result is an instance of https://github.com/ewnd9/dot-file-config
+  });
 ```
+
+## Related
+
+- [inquirer](https://github.com/sboudrias/Inquirer.js)
+- [inquirer-bluebird](https://github.com/ewnd9/inquirer-bluebird)
+- [inquirer-question](https://github.com/ewnd9/inquirer-question)
+- [inquirer-menu](https://github.com/ewnd9/inquirer-menu)
+- [inquirer-test](https://github.com/ewnd9/inquirer-test)
 
 ## License
 
