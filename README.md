@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.org/ewnd9/inquirer-credentials.svg?branch=master)](https://travis-ci.org/ewnd9/inquirer-credentials)
 
+Credentials prompt for CLI apps
+
+![Demonstration](/demo.gif?raw=true)
+
 ## Install
 
 ```
@@ -30,16 +34,19 @@ inquirerCredentials('.test', [username, password])
   .then(function(result) {
     result.data //=> { username: 'string', password: 'string' }
     result.save() // persists config to fs, result is an instance of https://github.com/ewnd9/dot-file-config
+  })
+  .catch(function(err) {
+    console.log(err.stack);
   });
 ```
 
 ## Related
 
 - [inquirer](https://github.com/sboudrias/Inquirer.js)
+- [inquirer-test](https://github.com/ewnd9/inquirer-test)
 - [inquirer-bluebird](https://github.com/ewnd9/inquirer-bluebird)
 - [inquirer-question](https://github.com/ewnd9/inquirer-question)
 - [inquirer-menu](https://github.com/ewnd9/inquirer-menu)
-- [inquirer-test](https://github.com/ewnd9/inquirer-test)
 
 ## License
 

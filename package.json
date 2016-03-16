@@ -1,11 +1,14 @@
 {
   "name": "inquirer-credentials",
   "version": "2.0.0",
-  "description": "Credentials prompt with fs persistence",
+  "description": "credentials prompt for CLI apps",
   "main": "index.js",
   "scripts": {
     "test": "ava --serial"
   },
+  "files": [
+    "index.js"
+  ],
   "preferGlobal": "false",
   "repository": {
     "type": "git",
@@ -13,7 +16,8 @@
   },
   "keywords": [
     "credentials",
-    "inquirer"
+    "inquirer",
+    "prompt"
   ],
   "author": "ewnd9 <ewndnine@gmail.com>",
   "license": "MIT",
