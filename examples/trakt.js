@@ -1,4 +1,5 @@
-// var inquirerCredentials = require('inquirer-credentials');
+'use strict';
+
 var inquirerCredentials = require('../');
 
 var appId = '6495';
@@ -10,6 +11,11 @@ var pin = {
   env: 'TRAKT_PIN'
 };
 
-inquirerCredentials('.test', [pin]).then(function(result) {
-  console.log(result.data);
-});
+var creds = inquirerCredentials('.test');
+
+creds
+  .run([pin])
+  .then(function(result) {
+    console.log(result.data);
+  })
+  .catch(err => console.log(err.stack || err));

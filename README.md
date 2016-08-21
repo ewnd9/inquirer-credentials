@@ -30,14 +30,20 @@ const password = {
   env: 'PASSWORD' // uses process.env['PASSWORD'] if exists and don't ask user
 };
 
-inquirerCredentials('.test', [username, password])
+const creds = inquirerCredentials('.test');
+
+creds
+  .run([username, password])
   .then(function(result) {
     result.data //=> { username: 'string', password: 'string' }
     result.save() // persists config to fs, result is an instance of https://github.com/ewnd9/dot-file-config
+
+    Object.keys(creds.config.data) //=> ['username', 'password']
   })
   .catch(function(err) {
-    console.log(err.stack);
+    console.log(err.stack || err);
   });
+
 ```
 
 ## Related

@@ -1,4 +1,5 @@
-// var inquirerCredentials = require('inquirer-credentials');
+'use strict';
+
 var inquirerCredentials = require('../');
 
 var username = {
@@ -14,6 +15,11 @@ var password = {
   env: 'PASSWORD'
 };
 
-inquirerCredentials('.test', [username, password]).then(function(result) {
-  console.log(result.data);
-});
+var creds = inquirerCredentials('.test');
+
+creds
+  .run([username, password])
+  .then(function(result) {
+    console.log(result.data);
+  })
+  .catch(err => console.log(err.stack || err));
